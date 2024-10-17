@@ -98,7 +98,7 @@ public class Breadcrumbs extends HorizontalLayout
 			anchor.addClassName(BREADCRUMB_CSS);
 			
 			// remove link and set css if url is empty (e.g. for 'edit' pages)
-			if(breadcrumb.url.isEmpty())
+			if(breadcrumb.url().isEmpty())
 			{
 				anchor.removeHref();
 				anchor.addClassName(BREADCRUMB_DISABLED_CSS);
