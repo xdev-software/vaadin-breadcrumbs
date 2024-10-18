@@ -34,11 +34,13 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @CssImport("./styles/breadcrumb.css")
 public class Breadcrumbs extends HorizontalLayout
 {
-	private static final String DELIMITER_URL = "/";
-	private static final String I18N_PREFIX = "breadcrumb_";
-	private static final String BREADCRUMB_CSS = "breadcrumb";
-	private static final String BREADCRUMBS_CONTAINER_CSS = "breadcrumbs-container";
-	private static final String BREADCRUMB_DISABLED_CSS = "breadcrumb-disabled";
+	protected static final String DELIMITER_URL = "/";
+	
+	protected static final String I18N_PREFIX = "breadcrumb_";
+	
+	protected static final String BREADCRUMB_CLASS = "breadcrumb";
+	protected static final String BREADCRUMBS_CONTAINER_CLASS = "breadcrumbs-container";
+	protected static final String BREADCRUMB_DISABLED_CLASS = "breadcrumb-disabled";
 	
 	public Breadcrumbs(final String path)
 	{
@@ -48,7 +50,7 @@ public class Breadcrumbs extends HorizontalLayout
 	
 	public Breadcrumbs()
 	{
-		this.addClassName(BREADCRUMBS_CONTAINER_CSS);
+		this.addClassName(BREADCRUMBS_CONTAINER_CLASS);
 	}
 	
 	/**
@@ -95,13 +97,13 @@ public class Breadcrumbs extends HorizontalLayout
 		for(final Breadcrumb breadcrumb : breadcrumbs)
 		{
 			final Anchor anchor = new Anchor(breadcrumb.url(), breadcrumb.label());
-			anchor.addClassName(BREADCRUMB_CSS);
+			anchor.addClassName(BREADCRUMB_CLASS);
 			
 			// remove link and set css if url is empty (e.g. for 'edit' pages)
 			if(breadcrumb.url().isEmpty())
 			{
 				anchor.removeHref();
-				anchor.addClassName(BREADCRUMB_DISABLED_CSS);
+				anchor.addClassName(BREADCRUMB_DISABLED_CLASS);
 			}
 			
 			layout.add(anchor);
