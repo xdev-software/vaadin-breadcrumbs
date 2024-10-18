@@ -4,10 +4,10 @@ import java.util.List;
 
 import com.vaadin.flow.router.Route;
 
-import software.xdev.vaadin.view.MainView;
+import software.xdev.vaadin.view.MainLayout;
 
 
-@Route(value = "cars", layout = MainView.class)
+@Route(value = "cars", layout = MainLayout.class)
 public class CarsView extends AbstractCarView
 {
 	@Override

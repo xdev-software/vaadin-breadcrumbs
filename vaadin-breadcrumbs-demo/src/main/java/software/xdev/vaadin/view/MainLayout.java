@@ -3,7 +3,6 @@ package software.xdev.vaadin.view;
 import java.util.Objects;
 
 import com.vaadin.flow.component.HasElement;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -12,7 +11,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
 
 import software.xdev.vaadin.breadcrumbs.Breadcrumbs;
 import software.xdev.vaadin.view.cars.CarsView;
@@ -21,15 +19,14 @@ import software.xdev.vaadin.view.cars.brand.BMWView;
 import software.xdev.vaadin.view.cars.brand.PorscheView;
 
 
-@Route("")
 @PageTitle("Breadcrumb Demo")
-public class MainView extends AppLayout
+public class MainLayout extends AppLayout
 {
 	private static final String SIDE_NAV_I18N_PREFIX = "sidenav_";
 	
 	private final Breadcrumbs breadcrumbs = new Breadcrumbs();
 	
-	public MainView()
+	public MainLayout()
 	{
 		final SideNav sideNav = new SideNav();
 		sideNav.addItem(new SideNavItem(
@@ -57,8 +54,6 @@ public class MainView extends AppLayout
 		final HorizontalLayout vlHeader = new HorizontalLayout(new DrawerToggle(), this.breadcrumbs);
 		vlHeader.setSpacing(false);
 		this.addToNavbar(vlHeader);
-		
-		UI.getCurrent().getElement().setAttribute("theme", "dark");
 	}
 	
 	@Override
