@@ -5,7 +5,8 @@
 ![Vaadin 24+](https://img.shields.io/badge/Vaadin%20Platform/Flow-24+-00b4f0)
 
 # vaadin-breadcrumbs
-A Vaadin Template Repo
+
+A Breadcrumbs component for Vaadin Flow
 
 ![demo](assets/demo.png)
 
