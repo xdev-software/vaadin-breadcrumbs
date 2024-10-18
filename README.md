@@ -6,10 +6,12 @@
 
 # vaadin-breadcrumbs
 
-A Breadcrumbs component for Vaadin Flow
+A Breadcrumbs component for Vaadin Flow.
 
 ![demo](assets/demo.png)
 
+_What is a "Breadcrumb"?_ <br/>
+A component with a list of links that helps visualizing a page's location within a site's hierarchical structure, it allows navigation up to any of the ancestors.
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/vaadin-breadcrumbs/releases/latest#Installation)
