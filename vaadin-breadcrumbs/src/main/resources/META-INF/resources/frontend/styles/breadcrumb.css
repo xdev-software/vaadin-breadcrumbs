@@ -1,12 +1,12 @@
 .breadcrumbs-container {
     display: flex;
-    flex-shrink: 0;
     position: relative;
     padding-right: calc(var(--lumo-space-m) * 1.6);
 }
 
 .breadcrumbs-container > vaadin-horizontal-layout {
     box-shadow: calc(var(--lumo-space-s) * 0.8) 0 calc(var(--lumo-space-m) * 0.7) calc(var(--lumo-space-s) * -0.15) var(--lumo-contrast-20pct);
+    flex-flow: row wrap;
 }
 
 .breadcrumb:first-child {
@@ -20,9 +20,10 @@
     padding-left: var(--lumo-space-xl);
     padding-right: var(--lumo-space-s);
     font-size: var(--lumo-font-size-l);
-    color: var(--lumo-text-primary);
+    color: var(--lumo-header-text-color);
     position: relative;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .breadcrumb:after {
