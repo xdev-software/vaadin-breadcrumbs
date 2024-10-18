@@ -5,7 +5,6 @@
 }
 
 .breadcrumbs-container > vaadin-horizontal-layout {
-    box-shadow: calc(var(--lumo-space-s) * 0.8) 0 calc(var(--lumo-space-m) * 0.7) calc(var(--lumo-space-s) * -0.15) var(--lumo-contrast-20pct);
     flex-flow: row wrap;
 }
 
@@ -14,6 +13,7 @@
 }
 
 .breadcrumb {
+    box-shadow: calc(var(--lumo-space-s) * 0.8) 0 calc(var(--lumo-space-m) * 0.7) calc(var(--lumo-space-s) * -0.15) var(--lumo-contrast-20pct);
     height: var(--lumo-size-l);
     background: var(--lumo-base-color);
     line-height: var(--lumo-size-l);
@@ -29,7 +29,7 @@
 .breadcrumb:after {
     content: "";
     position: absolute;
-    left: calc(100% - var(--lumo-space-m) * 0.7);
+    left: calc(100% - var(--lumo-space-m) * 0.75);
     top: calc(var(--lumo-space-m) * 0.4);
     z-index: 1;
     width: 0;
