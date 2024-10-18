@@ -18,7 +18,7 @@
 		<connection>scm:git:https://github.com/xdev-software/vaadin-breadcrumbs.git</connection>
 	</scm>
 
-	<inceptionYear>2022</inceptionYear>
+	<inceptionYear>2024</inceptionYear>
 
 	<organization>
 		<name>XDEV Software</name>
