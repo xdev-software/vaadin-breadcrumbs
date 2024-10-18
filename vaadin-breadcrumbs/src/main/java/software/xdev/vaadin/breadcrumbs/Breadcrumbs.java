@@ -40,7 +40,6 @@ public class Breadcrumbs extends HorizontalLayout
 	
 	protected static final String BREADCRUMB_CLASS = "breadcrumb";
 	protected static final String BREADCRUMBS_CONTAINER_CLASS = "breadcrumbs-container";
-	protected static final String BREADCRUMB_DISABLED_CLASS = "breadcrumb-disabled";
 	
 	public Breadcrumbs(final String path)
 	{
@@ -64,15 +63,16 @@ public class Breadcrumbs extends HorizontalLayout
 		final List<Breadcrumb> breadcrumbs = new ArrayList<>();
 		breadcrumbs.add(new Breadcrumb(this.getTranslation(I18N_PREFIX + "home"), DELIMITER_URL));
 		
-		final List<String> partsList = new ArrayList<>(Arrays.asList(path.split(DELIMITER_URL)));
+		final List<String> parts = new ArrayList<>(Arrays.asList(path.split(DELIMITER_URL)));
 		
 		final StringBuilder hrefBuilder = new StringBuilder();
-		for(final String part : partsList)
+		for(final String part : parts)
 		{
 			if(!part.isEmpty())
 			{
 				// append to full link
 				hrefBuilder.append(DELIMITER_URL).append(part);
+				
 				final String title = this.getTranslation(I18N_PREFIX + part.toLowerCase());
 				
 				breadcrumbs.add(new Breadcrumb(title, hrefBuilder.toString()));
@@ -98,13 +98,6 @@ public class Breadcrumbs extends HorizontalLayout
 		{
 			final Anchor anchor = new Anchor(breadcrumb.url(), breadcrumb.label());
 			anchor.addClassName(BREADCRUMB_CLASS);
-			
-			// remove link and set css if url is empty (e.g. for 'edit' pages)
-			if(breadcrumb.url().isEmpty())
-			{
-				anchor.removeHref();
-				anchor.addClassName(BREADCRUMB_DISABLED_CLASS);
-			}
 			
 			layout.add(anchor);
 		}

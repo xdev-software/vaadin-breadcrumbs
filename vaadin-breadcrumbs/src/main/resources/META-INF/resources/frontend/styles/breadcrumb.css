@@ -45,8 +45,3 @@
 .breadcrumb:hover {
     text-decoration: underline;
 }
-
-.breadcrumb-disabled {
-    color: var(--lumo-text-primary) !important;
-    cursor: default;
-}
