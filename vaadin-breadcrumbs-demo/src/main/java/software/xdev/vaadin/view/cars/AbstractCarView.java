@@ -7,9 +7,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public abstract class AbstractCarView extends VerticalLayout
 {
-	protected static final String AUDI = "Audi";
-	protected static final String BMW = "BMW";
-	protected static final String PORSCHE = "Porsche";
+	protected static final String ELECTRIC = "electric";
+	protected static final String HYBRID = "hybrid";
+	protected static final String GASOLINE = "gasoline";
 	
 	protected AbstractCarView()
 	{
@@ -20,10 +20,10 @@ public abstract class AbstractCarView extends VerticalLayout
 	
 	protected abstract List<Car> getCars();
 	
-	protected static List<Car> getCarsByBrand(final String brand)
+	protected static List<Car> getCarsByFuel(final String fuel)
 	{
 		return getAllCars().stream()
-			.filter(c -> brand.equals(c.brand()))
+			.filter(c -> fuel.equals(c.fuel()))
 			.toList();
 	}
 	
@@ -31,18 +31,18 @@ public abstract class AbstractCarView extends VerticalLayout
 	protected static List<Car> getAllCars()
 	{
 		return List.of(
-			new Car(AUDI, "A4", 190),
-			new Car(AUDI, "A3", 150),
-			new Car(AUDI, "S4", 250),
-			new Car(AUDI, "Q5", 300),
-			new Car(BMW, "318i", 190),
-			new Car(BMW, "M4", 400),
-			new Car(BMW, "420d", 200),
-			new Car(BMW, "X5", 250),
-			new Car(PORSCHE, "Cayenne", 300),
-			new Car(PORSCHE, "911", 400),
-			new Car(PORSCHE, "Carrera", 400),
-			new Car(PORSCHE, "GT3RS", 600)
+			new Car(ELECTRIC, "A4", 190),
+			new Car(ELECTRIC, "A3", 150),
+			new Car(ELECTRIC, "S4", 250),
+			new Car(ELECTRIC, "Q5", 300),
+			new Car(HYBRID, "318i", 190),
+			new Car(HYBRID, "M4", 400),
+			new Car(HYBRID, "420d", 200),
+			new Car(HYBRID, "X5", 250),
+			new Car(GASOLINE, "Cayenne", 300),
+			new Car(GASOLINE, "911", 400),
+			new Car(GASOLINE, "Carrera", 400),
+			new Car(GASOLINE, "GT3RS", 600)
 		);
 	}
 }

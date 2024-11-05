@@ -12,7 +12,8 @@ public class CarGrid extends Grid<Car>
 	public CarGrid(final List<Car> cars)
 	{
 		this.setItems(cars);
-		this.addColumn(Car::brand).setHeader(this.getTranslation(I18N_PREFIX + "branch"));
+		this.addColumn((car) -> this.getTranslation(I18N_PREFIX + car.fuel()))
+			.setHeader(this.getTranslation(I18N_PREFIX + "fuel"));
 		this.addColumn(Car::name).setHeader(this.getTranslation(I18N_PREFIX + "type"));
 		this.addColumn(Car::hp).setHeader(this.getTranslation(I18N_PREFIX + "hp"));
 	}

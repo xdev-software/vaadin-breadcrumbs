@@ -9,13 +9,13 @@ import software.xdev.vaadin.view.cars.AbstractCarView;
 import software.xdev.vaadin.view.cars.Car;
 
 
-@Route(value = "cars/audi", layout = MainLayout.class)
-public class AudiView extends AbstractCarView
+@Route(value = "cars/gasoline", layout = MainLayout.class)
+public class GasolineView extends AbstractCarView
 {
 	@Override
 	@SuppressWarnings("checkstyle:MagicNumber")
 	protected List<Car> getCars()
 	{
-		return getCarsByBrand(AUDI);
+		return getCarsByFuel(GASOLINE);
 	}
 }

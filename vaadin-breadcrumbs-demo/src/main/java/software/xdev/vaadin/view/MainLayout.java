@@ -14,9 +14,9 @@ import com.vaadin.flow.router.PageTitle;
 
 import software.xdev.vaadin.breadcrumbs.Breadcrumbs;
 import software.xdev.vaadin.view.cars.CarsView;
-import software.xdev.vaadin.view.cars.brand.AudiView;
-import software.xdev.vaadin.view.cars.brand.BMWView;
-import software.xdev.vaadin.view.cars.brand.PorscheView;
+import software.xdev.vaadin.view.cars.brand.ElectricView;
+import software.xdev.vaadin.view.cars.brand.GasolineView;
+import software.xdev.vaadin.view.cars.brand.HybridView;
 
 
 @PageTitle("Breadcrumb Demo")
@@ -38,9 +38,18 @@ public class MainLayout extends AppLayout
 			this.getTranslation(SIDE_NAV_I18N_PREFIX + "cars"),
 			CarsView.class,
 			VaadinIcon.CAR.create());
-		carsItem.addItem(new SideNavItem("Audi", AudiView.class));
-		carsItem.addItem(new SideNavItem("BMW", BMWView.class));
-		carsItem.addItem(new SideNavItem("Porsche", PorscheView.class));
+		carsItem.addItem(new SideNavItem(
+			this.getTranslation(SIDE_NAV_I18N_PREFIX + "electric"),
+			ElectricView.class,
+			VaadinIcon.BOLT.create()));
+		carsItem.addItem(new SideNavItem(
+			this.getTranslation(SIDE_NAV_I18N_PREFIX + "hybrid"),
+			HybridView.class,
+			VaadinIcon.GLOBE.create()));
+		carsItem.addItem(new SideNavItem(
+			this.getTranslation(SIDE_NAV_I18N_PREFIX + "gasoline"),
+			GasolineView.class,
+			VaadinIcon.FIRE.create()));
 		
 		sideNav.addItem(Objects.requireNonNull(carsItem));
 		
