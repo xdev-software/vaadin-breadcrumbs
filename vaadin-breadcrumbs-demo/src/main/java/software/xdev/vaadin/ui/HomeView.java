@@ -1,4 +1,4 @@
-package software.xdev.vaadin.view;
+package software.xdev.vaadin.ui;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;

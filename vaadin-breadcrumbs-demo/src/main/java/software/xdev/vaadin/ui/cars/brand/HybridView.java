@@ -1,12 +1,14 @@
-package software.xdev.vaadin.view.cars.brand;
+package software.xdev.vaadin.ui.cars.brand;
+
+import static software.xdev.vaadin.ui.TranslationKeys.HYBRID;
 
 import java.util.List;
 
 import com.vaadin.flow.router.Route;
 
-import software.xdev.vaadin.view.MainLayout;
-import software.xdev.vaadin.view.cars.AbstractCarView;
-import software.xdev.vaadin.view.cars.Car;
+import software.xdev.vaadin.ui.MainLayout;
+import software.xdev.vaadin.ui.cars.AbstractCarView;
+import software.xdev.vaadin.ui.cars.Car;
 
 
 @Route(value = "cars/hybrid", layout = MainLayout.class)

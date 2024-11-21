@@ -1,4 +1,8 @@
-package software.xdev.vaadin.view.cars;
+package software.xdev.vaadin.ui.cars;
+
+import static software.xdev.vaadin.ui.TranslationKeys.ELECTRIC;
+import static software.xdev.vaadin.ui.TranslationKeys.GASOLINE;
+import static software.xdev.vaadin.ui.TranslationKeys.HYBRID;
 
 import java.util.List;
 
@@ -7,9 +11,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public abstract class AbstractCarView extends VerticalLayout
 {
-	protected static final String ELECTRIC = "electric";
-	protected static final String HYBRID = "hybrid";
-	protected static final String GASOLINE = "gasoline";
 	
 	protected AbstractCarView()
 	{
@@ -23,7 +24,7 @@ public abstract class AbstractCarView extends VerticalLayout
 	protected static List<Car> getCarsByFuel(final String fuel)
 	{
 		return getAllCars().stream()
-			.filter(c -> fuel.equals(c.fuel()))
+			.filter(c -> fuel.equals(c.fuelI18N()))
 			.toList();
 	}
 	
