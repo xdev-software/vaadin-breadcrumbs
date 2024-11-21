@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
+import com.vaadin.flow.router.Layout;
 import com.vaadin.flow.router.PageTitle;
 
 import software.xdev.vaadin.breadcrumbs.Breadcrumbs;
@@ -19,6 +20,7 @@ import software.xdev.vaadin.ui.cars.brand.GasolineView;
 import software.xdev.vaadin.ui.cars.brand.HybridView;
 
 
+@Layout
 @PageTitle("Breadcrumb Demo")
 public class MainLayout extends AppLayout
 {

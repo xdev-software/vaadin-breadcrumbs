@@ -6,12 +6,11 @@ import java.util.List;
 
 import com.vaadin.flow.router.Route;
 
-import software.xdev.vaadin.ui.MainLayout;
 import software.xdev.vaadin.ui.cars.AbstractCarView;
 import software.xdev.vaadin.ui.cars.Car;
 
 
-@Route(value = "cars/electric", layout = MainLayout.class)
+@Route("cars/electric")
 public class ElectricView extends AbstractCarView
 {
 	@Override

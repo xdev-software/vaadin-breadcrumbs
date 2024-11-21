@@ -32,6 +32,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 /**
  * Represents a horizontal breadcrumb navigation bar
  */
+@SuppressWarnings("java:S1948")
 @CssImport("./styles/breadcrumb.css")
 public class Breadcrumbs extends HorizontalLayout
 {
@@ -41,7 +42,8 @@ public class Breadcrumbs extends HorizontalLayout
 	protected static final String BREADCRUMBS_CONTAINER_CLASS = "breadcrumbs-container";
 	
 	protected String homeBreadcrumbName = "Home";
-	protected BiFunction<List<String>, String, String> breadcrumbNameResolver = (parts, part) -> part;
+	protected BiFunction<List<String>, String, String> breadcrumbNameResolver =
+		(parts, part) -> part;
 	
 	public Breadcrumbs(final String path)
 	{

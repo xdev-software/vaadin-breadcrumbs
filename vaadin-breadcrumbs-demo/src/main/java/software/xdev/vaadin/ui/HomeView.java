@@ -7,7 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.router.Route;
 
 
-@Route(value = "", layout = MainLayout.class)
+@Route("")
 public class HomeView extends VerticalLayout
 {
 	public HomeView()

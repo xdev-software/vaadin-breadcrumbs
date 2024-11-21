@@ -12,7 +12,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public abstract class AbstractCarView extends VerticalLayout
 {
-	
 	protected AbstractCarView()
 	{
 		final CarGrid carGrid = new CarGrid(this.getCars());
