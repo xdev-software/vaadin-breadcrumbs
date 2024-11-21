@@ -17,7 +17,11 @@ package software.xdev.vaadin.breadcrumbs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.BiFunction;
+import java.util.stream.Stream;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.CssImport;
@@ -26,20 +30,20 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 
 /**
- * The Breadcrumbs class is a custom component for creating a breadcrumb navigation bar within a Vaadin application.
- * <p>
- * It extends the HorizontalLayout class to arrange breadcrumb links horizontally.
- * </p>
+ * Represents a horizontal breadcrumb navigation bar
  */
+@SuppressWarnings("java:S1948")
 @CssImport("./styles/breadcrumb.css")
 public class Breadcrumbs extends HorizontalLayout
 {
 	protected static final String DELIMITER_URL = "/";
 	
-	protected static final String I18N_PREFIX = "breadcrumb_";
-	
 	protected static final String BREADCRUMB_CLASS = "breadcrumb";
 	protected static final String BREADCRUMBS_CONTAINER_CLASS = "breadcrumbs-container";
+	
+	protected String homeBreadcrumbName = "Home";
+	protected BiFunction<List<String>, String, String> breadcrumbNameResolver =
+		(parts, part) -> part;
 	
 	public Breadcrumbs(final String path)
 	{
@@ -52,6 +56,18 @@ public class Breadcrumbs extends HorizontalLayout
 		this.addClassName(BREADCRUMBS_CONTAINER_CLASS);
 	}
 	
+	public Breadcrumbs withHomeBreadcrumbName(final String name)
+	{
+		this.homeBreadcrumbName = Objects.requireNonNull(name);
+		return this;
+	}
+	
+	public Breadcrumbs withBreadcrumbNameResolver(final BiFunction<List<String>, String, String> breadcrumbNameResolver)
+	{
+		this.breadcrumbNameResolver = Objects.requireNonNull(breadcrumbNameResolver);
+		return this;
+	}
+	
 	/**
 	 * Initializes the breadcrumb navigation based on the given URL path. It splits the path, creates breadcrumb items
 	 * for each part, and updates the view.
@@ -60,26 +76,30 @@ public class Breadcrumbs extends HorizontalLayout
 	 */
 	public void updatePath(final String path)
 	{
-		final List<Breadcrumb> breadcrumbs = new ArrayList<>();
-		breadcrumbs.add(new Breadcrumb(this.getTranslation(I18N_PREFIX + "home"), DELIMITER_URL));
+		this.updateView(
+			Stream.concat(
+				Stream.of(new Breadcrumb(this.homeBreadcrumbName, DELIMITER_URL)),
+				this.buildBreadcrumbs(Arrays.asList(path.split(DELIMITER_URL))).stream()
+			).toList()
+		);
+	}
+	
+	protected List<Breadcrumb> buildBreadcrumbs(final List<String> parts)
+	{
+		final List<String> currentPaths = new ArrayList<>();
 		
-		final List<String> parts = new ArrayList<>(Arrays.asList(path.split(DELIMITER_URL)));
-		
-		final StringBuilder hrefBuilder = new StringBuilder();
-		for(final String part : parts)
-		{
-			if(!part.isEmpty())
-			{
-				// append to full link
-				hrefBuilder.append(DELIMITER_URL).append(part);
-				
-				final String title = this.getTranslation(I18N_PREFIX + part.toLowerCase());
-				
-				breadcrumbs.add(new Breadcrumb(title, hrefBuilder.toString()));
-			}
-		}
-		
-		this.updateView(breadcrumbs);
+		return parts.stream()
+			.filter(s -> !s.isEmpty())
+			.map(part -> {
+				currentPaths.add(part);
+				return new Breadcrumb(
+					this.breadcrumbNameResolver.apply(
+						// Use unmodifiable so that it can be accidentally modified by user
+						Collections.unmodifiableList(currentPaths),
+						part),
+					String.join(DELIMITER_URL, currentPaths));
+			})
+			.toList();
 	}
 	
 	/**
