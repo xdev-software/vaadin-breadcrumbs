@@ -6,10 +6,12 @@
 
 # vaadin-breadcrumbs
 
-A Breadcrumbs component for Vaadin Flow
+A Breadcrumbs component for Vaadin Flow.
 
 ![demo](assets/demo.png)
 
+_What is a "Breadcrumb"?_ <br/>
+A component with a list of links that helps visualizing a page's location within a site's hierarchical structure, it allows navigation up to any of the ancestors.
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/vaadin-breadcrumbs/releases/latest#Installation)
@@ -33,3 +35,5 @@ See the [contributing guide](./CONTRIBUTING.md) for detailed instructions on how
 
 ## Dependencies and Licenses
 View the [license of the current project](LICENSE) or the [summary including all dependencies](https://xdev-software.github.io/vaadin-breadcrumbs/dependencies)
+
+_This component [was sponsored](https://xdev.software/en/news/detail/collaboration-between-atu-and-xdev-leads-to-open-source-breadcrumb-component-for-vaadin) by [<img src="./assets/ATU_Logo.svg" alt="ATU" height=20 />](https://atu.de)_

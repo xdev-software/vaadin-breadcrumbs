@@ -1,4 +1,4 @@
-package software.xdev.vaadin.view;
+package software.xdev.vaadin.ui;
 
 import java.util.Objects;
 
@@ -10,37 +10,48 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
+import com.vaadin.flow.router.Layout;
 import com.vaadin.flow.router.PageTitle;
 
 import software.xdev.vaadin.breadcrumbs.Breadcrumbs;
-import software.xdev.vaadin.view.cars.CarsView;
-import software.xdev.vaadin.view.cars.brand.AudiView;
-import software.xdev.vaadin.view.cars.brand.BMWView;
-import software.xdev.vaadin.view.cars.brand.PorscheView;
+import software.xdev.vaadin.ui.cars.CarsView;
+import software.xdev.vaadin.ui.cars.brand.ElectricView;
+import software.xdev.vaadin.ui.cars.brand.GasolineView;
+import software.xdev.vaadin.ui.cars.brand.HybridView;
 
 
+@Layout
 @PageTitle("Breadcrumb Demo")
 public class MainLayout extends AppLayout
 {
-	private static final String SIDE_NAV_I18N_PREFIX = "sidenav_";
-	
-	private final Breadcrumbs breadcrumbs = new Breadcrumbs();
+	private final Breadcrumbs breadcrumbs = new Breadcrumbs()
+		.withHomeBreadcrumbName(this.getTranslation(TranslationKeys.HOME))
+		.withBreadcrumbNameResolver((full, part) -> this.getTranslation(part));
 	
 	public MainLayout()
 	{
 		final SideNav sideNav = new SideNav();
 		sideNav.addItem(new SideNavItem(
-			this.getTranslation(SIDE_NAV_I18N_PREFIX + "home"),
+			this.getTranslation(TranslationKeys.HOME),
 			"",
 			VaadinIcon.HOME_O.create()));
 		
 		final SideNavItem carsItem = new SideNavItem(
-			this.getTranslation(SIDE_NAV_I18N_PREFIX + "cars"),
+			this.getTranslation(TranslationKeys.CARS),
 			CarsView.class,
 			VaadinIcon.CAR.create());
-		carsItem.addItem(new SideNavItem("Audi", AudiView.class));
-		carsItem.addItem(new SideNavItem("BMW", BMWView.class));
-		carsItem.addItem(new SideNavItem("Porsche", PorscheView.class));
+		carsItem.addItem(new SideNavItem(
+			this.getTranslation(TranslationKeys.GASOLINE),
+			GasolineView.class,
+			VaadinIcon.FIRE.create()));
+		carsItem.addItem(new SideNavItem(
+			this.getTranslation(TranslationKeys.HYBRID),
+			HybridView.class,
+			VaadinIcon.GLOBE.create()));
+		carsItem.addItem(new SideNavItem(
+			this.getTranslation(TranslationKeys.ELECTRIC),
+			ElectricView.class,
+			VaadinIcon.BOLT.create()));
 		
 		sideNav.addItem(Objects.requireNonNull(carsItem));
 		
