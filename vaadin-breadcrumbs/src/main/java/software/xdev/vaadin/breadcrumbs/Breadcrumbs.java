@@ -26,10 +26,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 
 /**
- * The Breadcrumbs class is a custom component for creating a breadcrumb navigation bar within a Vaadin application.
- * <p>
- * It extends the HorizontalLayout class to arrange breadcrumb links horizontally.
- * </p>
+ * Represents a horizontal breadcrumb navigation bar
  */
 @CssImport("./styles/breadcrumb.css")
 public class Breadcrumbs extends HorizontalLayout
