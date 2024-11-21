@@ -39,17 +39,17 @@ public class MainLayout extends AppLayout
 			CarsView.class,
 			VaadinIcon.CAR.create());
 		carsItem.addItem(new SideNavItem(
-			this.getTranslation(TranslationKeys.ELECTRIC),
-			ElectricView.class,
-			VaadinIcon.BOLT.create()));
+			this.getTranslation(TranslationKeys.GASOLINE),
+			GasolineView.class,
+			VaadinIcon.FIRE.create()));
 		carsItem.addItem(new SideNavItem(
 			this.getTranslation(TranslationKeys.HYBRID),
 			HybridView.class,
 			VaadinIcon.GLOBE.create()));
 		carsItem.addItem(new SideNavItem(
-			this.getTranslation(TranslationKeys.GASOLINE),
-			GasolineView.class,
-			VaadinIcon.FIRE.create()));
+			this.getTranslation(TranslationKeys.ELECTRIC),
+			ElectricView.class,
+			VaadinIcon.BOLT.create()));
 		
 		sideNav.addItem(Objects.requireNonNull(carsItem));
 		

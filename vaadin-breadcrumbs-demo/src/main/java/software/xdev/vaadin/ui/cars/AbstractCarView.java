@@ -3,6 +3,7 @@ package software.xdev.vaadin.ui.cars;
 import static software.xdev.vaadin.ui.TranslationKeys.ELECTRIC;
 import static software.xdev.vaadin.ui.TranslationKeys.GASOLINE;
 import static software.xdev.vaadin.ui.TranslationKeys.HYBRID;
+import static software.xdev.vaadin.ui.TranslationKeys.PLUTONIUM;
 
 import java.util.List;
 
@@ -32,18 +33,15 @@ public abstract class AbstractCarView extends VerticalLayout
 	protected static List<Car> getAllCars()
 	{
 		return List.of(
-			new Car(ELECTRIC, "A4", 190),
-			new Car(ELECTRIC, "A3", 150),
-			new Car(ELECTRIC, "S4", 250),
-			new Car(ELECTRIC, "Q5", 300),
-			new Car(HYBRID, "318i", 190),
-			new Car(HYBRID, "M4", 400),
-			new Car(HYBRID, "420d", 200),
-			new Car(HYBRID, "X5", 250),
-			new Car(GASOLINE, "Cayenne", 300),
-			new Car(GASOLINE, "911", 400),
-			new Car(GASOLINE, "Carrera", 400),
-			new Car(GASOLINE, "GT3RS", 600)
+			new Car(GASOLINE, "Opel Astra K", 110),
+			new Car(GASOLINE, "Skoda Octavia 4", 150),
+			new Car(GASOLINE, "VW Golf 7 GTI", 220),
+			new Car(GASOLINE, "Porsche GT3 RS", 525),
+			new Car(HYBRID, "Mercedes A250", 160),
+			new Car(HYBRID, "VW Golf 8 eTSI", 150),
+			new Car(ELECTRIC, "Tesla Model 3", 460),
+			new Car(ELECTRIC, "BMW i4", 540),
+			new Car(PLUTONIUM, "DeLorean DMC-12", 1_620_000)
 		);
 	}
 }
