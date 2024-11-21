@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="FORMAT" timestamp="1729239360477">
-    <module artifactId="vaadin-breadcrumbs" groupId="software.xdev" version="1.0.0"/>
+<licensePluginReport goal="FORMAT" timestamp="1732197058777">
+    <module artifactId="vaadin-breadcrumbs" groupId="software.xdev" version="1.1.0"/>
     <files>
         <file path="src/main/java/software/xdev/vaadin/breadcrumbs/Breadcrumbs.java" result="NOOP"/>
     </files>
