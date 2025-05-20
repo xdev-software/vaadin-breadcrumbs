@@ -16,6 +16,9 @@ A component with a list of links that helps visualizing a page's location within
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/vaadin-breadcrumbs/releases/latest#Installation)
 
+### Spring-Boot
+* You may have to include ``software/xdev`` inside [``vaadin.allowed-packages``](https://vaadin.com/docs/latest/integrations/spring/configuration#configure-the-scanning-of-packages)
+
 ## Run the Demo
 * Checkout the repo
 * Run ``mvn install && mvn -f vaadin-breadcrumbs-demo spring-boot:run``
