@@ -1,0 +1,47 @@
+.breadcrumbs-container {
+    display: flex;
+    position: relative;
+    padding-right: calc(var(--lumo-space-m) * 1.6);
+}
+
+.breadcrumbs-container > vaadin-horizontal-layout {
+    flex-flow: row wrap;
+}
+
+.breadcrumb:first-child {
+    padding-left: var(--lumo-space-l);
+}
+
+.breadcrumb {
+    box-shadow: calc(var(--lumo-space-s) * 0.8) 0 calc(var(--lumo-space-m) * 0.7) calc(var(--lumo-space-s) * -0.15) var(--lumo-contrast-20pct);
+    height: var(--lumo-size-l);
+    background: var(--lumo-base-color);
+    line-height: var(--lumo-size-l);
+    padding-left: var(--lumo-space-xl);
+    padding-right: var(--lumo-space-s);
+    font-size: var(--lumo-font-size-l);
+    color: var(--lumo-header-text-color);
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.breadcrumb:after {
+    content: "";
+    position: absolute;
+    left: calc(100% - var(--lumo-space-m) * 0.75);
+    top: calc(var(--lumo-space-m) * 0.4);
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border: var(--lumo-space-m) solid var(--lumo-base-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: 0 0 0 0 var(--lumo-contrast-30pct), calc(var(--lumo-space-s) * 0.5) calc(var(--lumo-space-s) * -0.5) calc(var(--lumo-space-s) * 0.8) calc(var(--lumo-space-s) * -0.4) var(--lumo-contrast-30pct);
+    transform: rotate(45deg);
+    margin-left: calc(var(--lumo-space-m) * -0.3);
+}
+
+.breadcrumb:hover {
+    text-decoration: underline;
+}
