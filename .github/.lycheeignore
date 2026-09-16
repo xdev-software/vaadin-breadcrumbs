@@ -1,4 +1,5 @@
 # Ignorefile for broken link check
 localhost
 mvnrepository.com
+stackoverflow.com
 atu.de
